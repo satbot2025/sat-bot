@@ -2,21 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>SAT Bot for Kids</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>SAT Bot for Kids</h1>
-    <div id="chat-container">
-        <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Ask me anything about the SAT!">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-    <script src="static/script.js"></script>
+<body style="background: #f4f4f9; font-family: 'Roboto', Arial, sans-serif;">
+    <nav style="background: #1976d2; color: #fff; padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 2rem; font-weight: 700; letter-spacing: 1px;">SAT Bot for Kids</span>
+            <div>
+                <a href="#practice" style="color: #fff; margin-right: 24px; text-decoration: none; font-weight: 500;">Practice</a>
+                <a href="#tips" style="color: #fff; margin-right: 24px; text-decoration: none; font-weight: 500;">Tips</a>
+                <a href="#contact" style="color: #fff; text-decoration: none; font-weight: 500;">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main style="max-width: 900px; margin: 40px auto;">
+        <section style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px; margin-bottom: 32px;">
+            <h2 style="color: #1976d2; font-size: 1.7rem; margin-bottom: 16px;">Welcome to SAT Bot!</h2>
+            <p style="font-size: 1.1rem; color: #333; margin-bottom: 24px;">Practice, learn, and track your progress with SAT Bot. Get instant feedback, explanations, and tips for SAT success!</p>
+            <button style="background: #1976d2; color: #fff; border: none; padding: 12px 32px; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer;">Start Practicing</button>
+        </section>
+        <section style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px;">
+            <h3 style="color: #1976d2; font-size: 1.3rem; margin-bottom: 16px;">Chat with SAT Bot</h3>
+            <div id="chat-box" style="height: 220px; overflow-y: auto; border: 1px solid #ddd; padding: 12px; margin-bottom: 16px; background: #fafafa; border-radius: 8px;"></div>
+            <div style="display: flex; gap: 8px;">
+                <input type="text" id="user-input" placeholder="Ask me anything about the SAT!" style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                <button onclick="sendMessage()" style="background: #1976d2; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">Send</button>
+            </div>
+        </section>
+    </main>
+    <footer style="background: #1976d2; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1rem;">
+        &copy; 2025 SAT Bot Powered By Bella Labubu
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
-=======
     <title>SAT Bot</title>
     <link rel="stylesheet" href="style.css">
 </head>
