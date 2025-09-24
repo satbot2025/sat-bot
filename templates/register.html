@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+  <section class="card" aria-labelledby="registerTitle">
+    <h1 id="registerTitle" class="h2">Create your account</h1>
+    <form method="post" class="chat-form" autocomplete="off">
+      <label class="visually-hidden" for="username">Username</label>
+      <input id="username" name="username" class="input" placeholder="Username (letters/numbers)" minlength="3" maxlength="20" pattern="[A-Za-z0-9]+" required />
+      <label class="visually-hidden" for="password">Password</label>
+      <input id="password" type="password" name="password" class="input" placeholder="Password (min 6)" minlength="6" required />
+      <button class="btn btn-primary" type="submit">Create account</button>
+    </form>
+    <p class="tiny">Already have an account? <a href="/login">Sign in</a>.</p>
+  </section>
+{% endblock %}

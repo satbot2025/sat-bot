@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <section class="card">
+    <h1 class="h2">Welcome, {{ user.username }} 👋</h1>
+    <p class="muted">This is your dashboard. We’ll add study progress, streaks, and saved practice sets here.</p>
+    <div class="card">
+      <h2 class="h2">Quick actions</h2>
+      <ul class="bullets">
+        <li>Start a focus session</li>
+        <li>Review vocab</li>
+        <li>Resume last practice</li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}

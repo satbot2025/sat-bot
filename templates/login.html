@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <section class="card" aria-labelledby="loginTitle">
+    <h1 id="loginTitle" class="h2">Sign in</h1>
+    <form method="post" class="chat-form" autocomplete="off">
+      <label class="visually-hidden" for="username">Username</label>
+      <input id="username" name="username" class="input" placeholder="Username" minlength="3" maxlength="20" required />
+      <label class="visually-hidden" for="password">Password</label>
+      <input id="password" type="password" name="password" class="input" placeholder="Password" minlength="6" required />
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="tiny">No account? <a href="/register">Create one</a>.</p>
+  </section>
+{% endblock %}

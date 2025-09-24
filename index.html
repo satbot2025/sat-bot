@@ -1,34 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SAT Bot for Kids</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav style="background: #1976d2; color: #fff; padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-        <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
-            <span style="font-size: 2rem; font-weight: 700; letter-spacing: 1px;">SAT Bot for Kids</span>
-            <div>
-                <a href="#practice" style="color: #fff; margin-right: 24px; text-decoration: none; font-weight: 500;">Practice</a>
-                <a href="#tips" style="color: #fff; margin-right: 24px; text-decoration: none; font-weight: 500;">Tips</a>
-                <a href="#contact" style="color: #fff; text-decoration: none; font-weight: 500;">Contact</a>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAT Bot — Study Friend</title>
+    <meta name="description" content="A calm, study-friendly SAT companion. Mobile-first, offline-ready PWA with focus mode." />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <!-- Icons (SVG placeholders; replace with PNGs later for widest support) -->
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/icon.svg" />
+
+    <!-- Styles -->
+    <link rel="preload" href="/static/styles.css" as="style" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🎓</span>
+          <span class="name">SAT Bot</span>
         </div>
-    </nav>
-    <main style="max-width: 900px; margin: 40px auto;">
-        <section style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px;">
-            <h3 style="color: #1976d2; font-size: 1.3rem; margin-bottom: 16px;">Chat with SAT Bot</h3>
-            <div id="chat-box" style="height: 220px; overflow-y: auto; border: 1px solid #ddd; padding: 12px; margin-bottom: 16px; background: #fafafa; border-radius: 8px;"></div>
-            <div style="display: flex; gap: 8px;">
-                <input type="text" id="user-input" placeholder="Ask me anything about the SAT!" style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
-                <button onclick="sendMessage()" style="background: #1976d2; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">Send</button>
-            </div>
-        </section>
+        <nav class="actions" aria-label="Site actions">
+          <button id="focusToggle" class="btn btn-ghost" title="Toggle Focus Mode (hide chrome)">Focus</button>
+          <button id="themeToggle" class="btn btn-ghost" title="Toggle Theme">Theme</button>
+          <button id="installBtn" class="btn btn-primary" hidden>Install</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero card">
+        <h1 class="h1">Study calmer with SAT Bot</h1>
+        <p class="muted">A distraction-light study companion you can install, use offline, and take anywhere.</p>
+        <ul class="benefits">
+          <li>Study-friendly design: readable type, gentle contrast, fewer distractions</li>
+          <li>Mobile-first: big tap targets, fast, responsive</li>
+          <li>PWA: install to home screen, offline cache, quick launch</li>
+        </ul>
+      </section>
+
+      <section class="chat card" aria-labelledby="chatTitle">
+        <div class="chat-header">
+          <h2 id="chatTitle" class="h2">Ask a question</h2>
+          <p class="muted">Type a prompt below. This is a static demo shell—you can wire a backend later.</p>
+        </div>
+        <div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <form id="chatForm" class="chat-form" autocomplete="off">
+          <label class="visually-hidden" for="chatInput">Your question</label>
+          <input id="chatInput" name="q" class="input" placeholder="e.g., Explain the Pythagorean theorem simply" required />
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+        <p class="muted tiny">Tip: Use Focus mode to hide header/footer while studying.</p>
+      </section>
+
+      <section class="tips card">
+        <h2 class="h2">Study boosters</h2>
+        <ul class="bullets">
+          <li>Toggle <strong>Focus</strong> to reduce visual noise.</li>
+          <li>Switch <strong>Theme</strong> to match your environment (light/dark).</li>
+          <li><strong>Install</strong> to use offline—perfect for commutes.</li>
+        </ul>
+      </section>
     </main>
-    <footer style="background: #1976d2; color: #fff; text-align: center; padding: 18px 0; margin-top: 40px; font-size: 1rem;">
-        &copy; 2025 SAT Bot Powered by Ellie / GJR-701
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> sat-bot.com • Be kind to your future self.</small>
+        <a class="tiny" href="/offline.html">Offline page</a>
+      </div>
     </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    <script defer src="/static/app.js"></script>
+  </body>
+  </html>

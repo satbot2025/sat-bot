@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    "strict": true,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "outDir": "static",
+    "rootDir": "src",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}

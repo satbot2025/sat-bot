@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %} • SAT Bot</title>
+    <meta name="description" content="A calm, study-friendly SAT companion. Mobile-first, offline-ready PWA with focus mode." />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/icon.svg" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🎓</span>
+          <a class="name" href="/">SAT Bot</a>
+        </div>
+        <nav class="actions" aria-label="Site actions">
+          <button id="focusToggle" class="btn btn-ghost" title="Toggle Focus Mode (hide chrome)">Focus</button>
+          <button id="themeToggle" class="btn btn-ghost" title="Toggle Theme">Theme</button>
+          <button id="installBtn" class="btn btn-primary" hidden>Install</button>
+          {% if user %}
+            <a class="btn" href="/dashboard">Dashboard</a>
+            <a class="btn" href="/logout">Logout</a>
+          {% else %}
+            <a class="btn" href="/login">Login</a>
+            <a class="btn btn-primary" href="/register">Sign up</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="card" role="status" aria-live="polite">
+            {% for category, message in messages %}
+              <p class="tiny {{ category }}">{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> sat-bot.com • Be kind to your future self.</small>
+        <a class="tiny" href="/offline.html">Offline page</a>
+      </div>
+    </footer>
+    <script defer src="/static/app.js"></script>
+  </body>
+  </html>
