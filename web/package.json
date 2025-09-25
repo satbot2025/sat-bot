@@ -10,6 +10,7 @@
     "postinstall": "npm run icons || echo Skipping icon generation"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.57.4",
     "bcryptjs": "^2.4.3",
     "jose": "^5.9.3",

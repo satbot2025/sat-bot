@@ -29,14 +29,13 @@ export default async function RootLayout({ children }: { children: ReactNode }){
         <a className="skip-link" href="#main">Skip to content</a>
         <header className="site-header">
           <div className="container header-inner">
+            <div className="left-spacer" aria-hidden="true" />
             <div className="brand">
               <a className="brand-link" href="/" aria-label="SAT Bot home">
                 <img src="/brand/logo.png" alt="SATBOT logo" className="brand-logo" />
               </a>
             </div>
             <nav className="actions" aria-label="Site actions">
-              <button id="focusToggle" className="btn btn-ghost" title="Toggle Focus Mode">Focus</button>
-              <button id="themeToggle" className="btn btn-ghost" title="Toggle Theme">Theme</button>
               <button id="installBtn" className="btn btn-primary" hidden>Install</button>
               {user ? (
                 <>

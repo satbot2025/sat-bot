@@ -7,24 +7,7 @@ export default function PWAClient(){
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
 
-    const THEME_KEY = 'satbot.theme';
-    const setTheme = (mode: 'light' | 'dark') => {
-      document.documentElement.dataset.theme = mode;
-      try { localStorage.setItem(THEME_KEY, mode); } catch {}
-    };
-    const saved = localStorage.getItem(THEME_KEY) as 'light' | 'dark' | null;
-    if (saved) setTheme(saved);
-
-    const themeBtn = document.getElementById('themeToggle');
-    const focusBtn = document.getElementById('focusToggle');
-
-    themeBtn?.addEventListener('click', () => {
-      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-      setTheme(next as 'light' | 'dark');
-    });
-    focusBtn?.addEventListener('click', () => {
-      document.body.classList.toggle('focus');
-    });
+    // Theme/Focus toggles removed from header; keeping minimal PWA install + SW register
 
     let deferredPrompt: any;
     const installBtn = document.getElementById('installBtn');

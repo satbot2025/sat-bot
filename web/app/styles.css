@@ -34,12 +34,14 @@ img{max-width:100%; display:block}
 
 /* Header */
 .site-header{position:sticky;top:0;backdrop-filter:saturate(120%) blur(6px); background-color:color-mix(in oklab, var(--bg) 80%, transparent); border-bottom:1px solid color-mix(in oklab, var(--text) 15%, transparent); z-index:10}
-.header-inner{display:flex;align-items:center;justify-content:space-between; gap:12px; padding:12px 0}
+.header-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center; gap:12px; padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand-logo{display:block;height:28px; width:auto}
 .name{letter-spacing:0.2px}
-.actions{display:flex;gap:8px}
+.actions{display:flex;gap:8px; justify-self:end}
+.header-center{display:none} /* Remove header-center reference */
+.actions{display:flex;gap:8px; justify-self:end} /* Align actions right */
 
 /* Footer */
 .site-footer{border-top:1px solid color-mix(in oklab, var(--text) 15%, transparent); margin-top:32px}
