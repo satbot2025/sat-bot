@@ -60,7 +60,7 @@ export default async function RootLayout({ children }: { children: ReactNode }){
         <main id="main" className="container">{children}</main>
         <footer className="site-footer">
           <div className="container footer-inner">
-            <small>© 2025 sat-bot.com • Powered by Ellie / GJR-701</small>
+            <small>© 2025 sat-bot.com • Powered by Ellie  GJR-701 • BG Design By Cindy•Logo Design By Suizhi</small>
           </div>
         </footer>
         <PWAClient />
